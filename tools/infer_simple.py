@@ -108,9 +108,9 @@ def main(args):
             cls_boxes, cls_segms, cls_keyps, cls_bodys = infer_engine.im_detect_all(
                 model, im, None, timers=timers
             )
-        logger.info('Inference time: {:.3f}s'.format(time.time() - t))
-        for k, v in timers.items():
-            logger.info(' | {}: {:.3f}s'.format(k, v.average_time))
+        #logger.info('Inference time: {:.3f}s'.format(time.time() - t)) # HACK: disable print
+        #for k, v in timers.items():									# HACK: disable print
+        #    logger.info(' | {}: {:.3f}s'.format(k, v.average_time))    # HACK: disable print
         if i == 0:
             logger.info(
                 ' \ Note: inference on the first image will be slower than the '
@@ -137,4 +137,6 @@ if __name__ == '__main__':
     workspace.GlobalInit(['caffe2', '--caffe2_log_level=0'])
     setup_logging(__name__)
     args = parse_args()
+	args.output_dir = args.output_dir.replace("MyDrive", "My Drive") # HACK: to hot-fix the problem with a space in a path
+    args.im_or_folder = args.im_or_folder.replace("MyDrive", "My Drive") # HACK: to hot-fix the problem with a space in a path
     main(args)

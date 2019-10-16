@@ -416,5 +416,5 @@ def vis_one_image(
     ### DensePose Visualization Done!!
     #
     output_name = os.path.basename(im_name) + '.' + ext
-    fig.savefig(os.path.join(output_dir, '{}'.format(output_name)), dpi=dpi)
+    #fig.savefig(os.path.join(output_dir, '{}'.format(output_name)), dpi=dpi) # HACK: do not save .pdf
     plt.close('all')
