@@ -137,6 +137,6 @@ if __name__ == '__main__':
     workspace.GlobalInit(['caffe2', '--caffe2_log_level=0'])
     setup_logging(__name__)
     args = parse_args()
-	args.output_dir = args.output_dir.replace("MyDrive", "My Drive") # HACK: to hot-fix the problem with a space in a path
+    args.output_dir = args.output_dir.replace("MyDrive", "My Drive") # HACK: to hot-fix the problem with a space in a path
     args.im_or_folder = args.im_or_folder.replace("MyDrive", "My Drive") # HACK: to hot-fix the problem with a space in a path
     main(args)
