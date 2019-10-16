@@ -410,7 +410,7 @@ def vis_one_image(
     IUV_SaveName = os.path.basename(im_name).split('.')[0]+'_IUV.png'
     INDS_SaveName = os.path.basename(im_name).split('.')[0]+'_INDS.png'
     cv2.imwrite(os.path.join(output_dir, '{}'.format(IUV_SaveName)), All_Coords )
-    cv2.imwrite(os.path.join(output_dir, '{}'.format(INDS_SaveName)), All_inds )
+    #cv2.imwrite(os.path.join(output_dir, '{}'.format(INDS_SaveName)), All_inds ) # HACK: do not save INDS
     print('IUV written to: ' , os.path.join(output_dir, '{}'.format(IUV_SaveName)) )
     ###
     ### DensePose Visualization Done!!
